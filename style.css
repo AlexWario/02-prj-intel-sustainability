@@ -1,1 +1,188 @@
 /* Add your CSS here */
+
+/*
+  This CSS makes the entire header background a sleek black gradient.
+  The gradient goes from dark gray at the top to black at the bottom.
+*/
+header {
+  /* Intel-branded blue to black gradient background */
+  background: linear-gradient(135deg, #0071c5 0%, #222 100%);
+  color: white; /* Make text easy to read on dark background */
+  padding: 60px 0 50px 0; /* More space for a hero look */
+}
+
+/* Center all text and images in the header */
+header div {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center; /* This centers all text inside the header */
+}
+
+/* Optional: Center the logo image as well */
+header img {
+  width: 120px; /* Good size for a logo */
+  height: auto;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2)); /* Subtle shadow for contrast */
+}
+
+/* --- Hero Section (Header) Styling ---
+  This CSS styles the header to look like a modern Intel-branded hero section.
+*/
+
+header h1 {
+  font-size: 2.5rem; /* Large, bold headline */
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #e0eefa; /* Softer white for subheading */
+  text-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+/*
+  --- Timeline Section Responsive Flexbox Layout ---
+  This CSS makes the timeline cards scroll horizontally on large screens and stack vertically on small screens.
+  It also styles the cards to match Intel's aesthetic and adds a simple hover effect for interactivity.
+*/
+
+/* --- Timeline Section: Enhanced with Scroll Snap, Transforms, and Custom Images ---
+  This CSS adds scroll snap for smooth horizontal navigation, and improves card hover effects with transforms and transitions.
+*/
+
+section {
+  width: 100%;
+  padding: 40px 0;
+  background: #f4f8fb; /* Light Intel-inspired background */
+
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 32px;
+  justify-content: flex-start;
+  align-items: stretch;
+  scroll-snap-type: x mandatory; /* Enable scroll snap */
+}
+
+section > div {
+  flex: 0 0 320px; /* Fixed width for each card on large screens */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,113,197,0.08);
+  padding: 24px 18px 18px 18px;
+  margin-bottom: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+  scroll-snap-align: start; /* Snap each card to the start */
+  cursor: pointer;
+  min-height: 340px;
+  box-sizing: border-box;
+}
+
+section > div img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 6px;
+  margin: 0 auto 12px auto;
+  display: block;
+}
+
+section > div h2 {
+  color: #0071c5;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+section > div h3 {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+section > div p {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 0;
+  transition: max-height 0.3s, opacity 0.3s;
+  max-height: 60px;
+  overflow: hidden;
+  opacity: 0.85;
+}
+
+/* Reveal more details on hover */
+section > div:hover {
+  box-shadow: 0 8px 32px rgba(0,113,197,0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(-10px) scale(1.04) rotate(-1deg); /* Subtle pop and tilt */
+  z-index: 2;
+}
+section > div:hover p {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* --- Timeline Cards: Unique Gradient Backgrounds ---
+  Each card gets a different blue/black gradient inspired by the header.
+  Gradients use different angles and blue shades for variety.
+*/
+section > div:nth-child(1) {
+  background: linear-gradient(120deg, #0071c5 0%, #222 100%);
+}
+section > div:nth-child(2) {
+  background: linear-gradient(135deg, #2196f3 0%, #222 100%);
+}
+section > div:nth-child(3) {
+  background: linear-gradient(110deg, #00b4d8 0%, #222 100%);
+}
+section > div:nth-child(4) {
+  background: linear-gradient(140deg, #005fa3 0%, #222 100%);
+}
+section > div:nth-child(5) {
+  background: linear-gradient(125deg, #0093e9 0%, #222 100%);
+}
+section > div:nth-child(6) {
+  background: linear-gradient(115deg, #00c6fb 0%, #222 100%);
+}
+section > div:nth-child(7) {
+  background: linear-gradient(130deg, #1e90ff 0%, #222 100%);
+}
+section > div:nth-child(8) {
+  background: linear-gradient(145deg, #007cf0 0%, #222 100%);
+}
+section > div:nth-child(9) {
+  background: linear-gradient(100deg, #005bea 0%, #222 100%);
+}
+
+/* Make sure text is readable on gradients */
+section > div {
+  color: #fff;
+}
+section > div h2, section > div h3, section > div p {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* Responsive: Stack vertically on small screens */
+@media (max-width: 800px) {
+  section {
+    flex-direction: column;
+    gap: 24px;
+    overflow-x: visible;
+    align-items: center;
+  }
+  section > div {
+    width: 95vw;
+    max-width: 400px;
+    min-width: 0;
+  }
+}
